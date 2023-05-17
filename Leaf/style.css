@@ -1,0 +1,179 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    background: fixed ghostwhite;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: red;
+}
+
+.item {
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: box-shadow .3s;
+    padding: 0 20px;
+}
+
+h1 {
+    margin-top: 60px;
+}
+
+ul {
+    margin: 0;
+    padding: auto;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    background-color: #fff;
+}
+
+.item h4 {
+    margin: 1rem 0 0.5rem 0;
+}
+
+.item p {
+    margin: 0 0 1rem 0;
+}
+
+.item img {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    display: block;
+}
+
+@media only screen and (min-width: 720px) {
+
+    nav {
+        background-color: white;
+        border-bottom: solid 2px gold;
+        height: 50px;
+        width: 63.5%;
+        position: fixed;
+        top: 0;
+
+    }
+
+
+    .container {
+        display: grid;
+        grid-template-columns: 7fr 4fr;
+
+    }
+
+    .list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 30px;
+        padding: 0 30px;
+
+
+    }
+
+    .map {
+        position: sticky !important;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 100vh;
+        margin: 0;
+
+
+    }
+
+
+}
+
+
+
+.marker.leaflet-popup {
+    margin-bottom: 16px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+}
+
+.marker.leaflet-popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -8px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #FFF;
+}
+
+.marker .leaflet-popup-content-wrapper {
+    background: transparent;
+    color: inherit;
+    box-shadow: none;
+    text-align: inherit;
+}
+
+.marker .leaflet-popup-content {
+    text-align: inherit;
+    color: inherit;
+    margin: 0;
+}
+
+.marker .leaflet-popup-tip-container {
+    display: none;
+}
+
+
+.marker.is-active,
+.marker:hover {
+    z-index: 300;
+    background: blue;
+    color: #FFF;
+}
+
+.marker.is-active::after,
+.marker:hover::after {
+    border-top-color: blue;
+}
+
+
+.marker.is-expanded {
+    background-color: #fff !important;
+    color: inherit !important;
+    z-index: 301;
+    text-align: left;
+}
+
+.marker.is-expanded::after {
+    border-top-color: #FFF !important;
+}
+
+
+.marker .leaflet-zoom-animated {
+    left: 0;
+    right: 0;
+    line-height: 20px;
+    padding: 10px 20px 10px;
+}
